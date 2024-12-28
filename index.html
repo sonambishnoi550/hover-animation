@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hover Animation</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #89fffd, #ef32d9);
+        }
+        .card {
+            width: 300px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+            perspective: 1000px;
+            transform-style: preserve-3d;
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .decorative-circle {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0));
+            border-radius: 50%;
+            animation: rotate 5s linear infinite;
+            opacity: 0.6;
+        }
+
+        .circle1 {
+            top: -50px;
+            left: -50px;
+        }
+
+        .circle2 {
+            bottom: -50px;
+            right: -50px;
+            animation-direction: reverse;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .card-content {
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            border-bottom: 2px solid #ccc;
+            transition: transform 0.4s;
+        }
+
+        .card:hover img {
+            transform: scale(1.1);
+        }
+
+        .card h3 {
+            margin-top: 15px;
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        .card:hover h3 {
+            color: #ff69b4;
+        }
+
+        .card p {
+            color: #666;
+            transition: color 0.3s;
+        }
+
+        .card:hover p {
+            color: #00bfff;
+        }
+
+        .light-trail {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: radial-gradient(circle, #ffffff, transparent);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: fade 1.5s infinite;
+        }
+
+        @keyframes fade {
+            0% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card" id="tilt-card">
+        <div class="decorative-circle circle1"></div>
+        <div class="decorative-circle circle2"></div>
+        <div class="card-content">
+            <img src="assets/png/garden.png" alt="Placeholder">
+           
+        </div>
+    </div>
+
+    <div class="light-trail" id="light-trail"></div>
+
+    <script>
+        const card = document.getElementById("tilt-card");
+        const lightTrail = document.getElementById("light-trail");
+        card.addEventListener("mousemove", (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = (e.clientX - rect.left) / rect.width - 0.5;
+            const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+            card.style.transform = `rotateX(${y * 10}deg) rotateY(${x * 10}deg)`;
+        });
+
+        card.addEventListener("mouseleave", () => {
+            card.style.transform = "rotateX(0) rotateY(0)";
+        });
+        document.addEventListener("mousemove", (e) => {
+            lightTrail.style.left = `${e.clientX - 7.5}px`;
+            lightTrail.style.top = `${e.clientY - 7.5}px`;
+        });
+    </script>
+</body>
+
+</html>
