@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Radial Code</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Luckiest+Guy");
+
+        body {
+            font-family: "Luckiest Guy", cursive;
+            background-image: -webkit-linear-gradient(90deg, skyblue 0%, steelblue 100%);  
+        }
+
+        h1 {
+            font-size: 80px;
+            text-align: center;
+            color: white;
+            text-shadow: 0 1px 0 #ccc, 0 10px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        h1 span {
+            display: inline-block;
+            animation: bounce 0.3s ease infinite alternate;
+        }
+
+        h1 span:nth-child(n) {
+            animation-delay: calc(0.1s * var(--n));
+        }
+
+        @keyframes bounce {
+            to {
+                transform: translateY(-20px);
+                text-shadow: 0 50px 25px rgba(0, 0, 0, 0.2);
+            }
+        }
+    </style>
+</head>
+
+<body class="m-0 w-full h-full items-center justify-center flex overflow-hidden min-h-screen">
+    <h1>
+        <span class="text-7xl" style="--n:1">R</span><span class="text-6xl" style="--n:2">a</span><span class="text-7xl" style="--n:3">d</span>
+        <span class="text-6xl" style="--n:4">i</span><span class="text-7xl" style="--n:5">a</span><span class="text-6xl" style="--n:6">l</span>
+        <br>
+        <span class="text-7xl" style="--n:7">c</span><span class="text-6xl" style="--n:8">o</span><span class="text-7xl" style="--n:9">d</span>
+        <span class="text-6xl" style="--n:10">e</span>
+    </h1>
+</body>
+
+</html>

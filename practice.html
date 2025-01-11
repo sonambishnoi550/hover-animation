@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: 'hkgrotesk', sans-serif;
+            @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&display=swap');
+            font-weight: 700;
+            font-style: normal
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            font-family: 'hkgrotesk', sans-serif;
+            background-color: black;
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            padding: 4em;
+            filter: contrast(20);
+            background-color: black;
+            overflow: hidden;
+        }
+
+        h1 {
+            color: white;
+            font-size: 8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            line-height: 1;
+            filter: blur(0.5rem);
+            animation: letterspacing 10s infinite alternate cubic-bezier(.2, 0, 0, 1);
+            display: block;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate3d(-50%, -50%, 0);
+        }
+
+        @keyframes letterspacing {
+            0% {
+                letter-spacing: -5rem;
+                filter: blur(0.5rem);
+            }
+
+            50% {
+                filter: blur(0.5rem);
+            }
+
+            100% {
+                letter-spacing: 1rem;
+                filter: blur(1.5rem);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Sonam</h1>
+    </div>
+</body>
+
+</html>
