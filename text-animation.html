@@ -4,38 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>text-animation</title>
     <style>
-        @font-face {
+        @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&display=swap');
+
+        * {
+            box-sizing: border-box;
             font-family: 'hkgrotesk', sans-serif;
-            @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&display=swap');
             font-weight: 700;
             font-style: normal
         }
 
-        * {
-            box-sizing: border-box;
-        }
-
         html,
         body {
-            height: 100%;
+            height: 100vh;
             width: 100%;
             font-family: 'hkgrotesk', sans-serif;
             background-color: black;
+            overflow: hidden;
         }
 
         .container {
             width: 100%;
-            height: 100%;
+            height: 100vh;
             position: relative;
             padding: 4em;
             filter: contrast(20);
             background-color: black;
             overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        h1 {
+       .main-heading {
             color: white;
             font-size: 8rem;
             font-weight: 700;
@@ -66,8 +68,9 @@
                 filter: blur(1.5rem);
             }
         }
+
         @media (max-width:567.98px) {
-            h1{
+            .main-heading {
                 font-size: 100px;
             }
         }
@@ -76,7 +79,7 @@
 
 <body>
     <div class="container">
-        <h1 class="text-white">radial code</h1>
+        <h1 class="main-heading">radial code</h1>
     </div>
 </body>
 
