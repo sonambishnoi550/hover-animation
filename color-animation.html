@@ -25,7 +25,7 @@ body {
 	color: white;
 }
 
-h1 {
+.heading {
 	--rotate-speed: 4s;
 	--move-speed: 8s;
 	--gradient: conic-gradient(
@@ -51,8 +51,8 @@ h1 {
 	animation-iteration-count: infinite, infinite;
 	animation-direction: normal, alternate;
 }
-h1::before,
-h1::after {
+.heading::before,
+.heading::after {
 	content: attr(data-title);
 	position: absolute;
 	inset: 0;
@@ -63,7 +63,7 @@ h1::after {
 	translate: 0 15px;
 	opacity: 0.45;
 }
-h1::after {
+.heading::after {
 	translate: 0 30px;
 	z-index: -2;
 	opacity: 0.35;
@@ -86,7 +86,7 @@ h1::after {
 	}
 }
  @media (max-width:567.98px) {
-         h1 {
+         .heading {
                 font-size: 50px;
             }
         }
@@ -94,6 +94,6 @@ h1::after {
     </style>
 </head>
 <body>
-    <h1 data-title="Sonam Bishnoi">Sonam Bishnoi</h1>
+    <h1 data-title="Sonam Bishnoi" class="heading">Sonam Bishnoi</h1>
 </body>
 </html>
