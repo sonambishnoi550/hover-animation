@@ -8,80 +8,83 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Card Hover</title>
     <style>
-            .card {
-                .face {
-                    transition: 0.5s;
-                    &.face1 {
-                        z-index: 1;
-                        transform: translateY(100px);
-                    }
-                }
-                &:hover .face.face1 {
-                    transform: translateY(0);
-                    background-image: linear-gradient(to left bottom, #8c00dc, #c600ba, #e80096, #f90074, #ff0057);
-                    border-bottom-left-radius: 0;
-                    border-bottom-right-radius: 0;
-                }
-                .face {
-                    &.face2 {
-                        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
-                        transform: translateY(-100px);
-                    }
-                }
-                &:hover .face.face2 {
-                    transform: translateY(0);
+        .card {
+            .face {
+                transition: 0.5s;
+
+                &.face1 {
+                    z-index: 1;
+                    transform: translateY(100px);
                 }
             }
+
+            &:hover .face.face1 {
+                transform: translateY(0);
+                background-image: linear-gradient(to left bottom, #8c00dc, #c600ba, #e80096, #f90074, #ff0057);
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+
+            .face {
+                &.face2 {
+                    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+                    transform: translateY(-100px);
+                }
+            }
+
+            &:hover .face.face2 {
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 
-<body class="m-0 p-0 min-h-screen bg-[#333333] flex items-center justify-center flex-wrap">
-    <div class="px-4">
-        <div class="container">
-            <header class="header m-0 text-center">
-                <h1 class="text-white font-extrabold text-5xl pb-10">Hover on Cards</h1>
-            </header>
-        </div>
-        <div class="container md:w-[1000px] flex lg:justify-between max-lg:gap-10 justify-center flex-wrap relative">
-            <div class="card relativepx-[9px]">
-                <div class="face face1 max-w-[300px] h-[200px] relative w-full rounded-xl flex items-center justify-center bg-[#333333]">
-                    <div class="content ">
-                        <h3 class="text-center text-white text-3xl">Card 1</h3>
-                    </div>
+<body class="bg-[#333333] min-h-screen flex items-center justify-center">
+    <div class="px-4 mx-auto text-center py-5">
+        <h1 class="text-white font-extrabold md:text-5xl text-3xl md:py-10 py-3">Hover on Cards</h1>
+        <div class="container md:w-[1000px] mx-auto flex max-lg:flex-wrap justify-center items-center lg:gap-10">
+            <div class="card relative px-[9px]">
+                <div
+                    class="face face1 max-w-[300px] h-[200px] relative w-full rounded-xl flex items-center justify-center bg-[#333333]">
+                    <h3 class="text-center text-white text-3xl">Card 1</h3>
                 </div>
-                <div class="face face2 max-w-[300px] h-[200px] relative rounded-xl hover:rounded-t-none bg-white flex items-center justify-center p-5">
-                    <div class="content">
-                        <p class="text-black mx-auto max-w-[650px] pb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem beatae quam distinctio
-                            cupiditate, sed corrupti minima quis magni consequatur commodi.</p>
-                        <a class="font-extrabold text-[#33333] p-3 rounded-full border-2 border-[#333333] hover:bg-[#333333] hover:text-white transition-all duration-700" href="#">Read More</a>
+                <div
+                    class="face face2 max-w-[300px] h-[200px] relative rounded-xl bg-white flex items-center justify-center p-5 hover:rounded-t-none">
+                    <div class="text-center">
+                        <p class="text-black mx-auto max-w-[250px] pb-4">Lorem ipsum dolor sit amet consectetur
+                            adipisicing elit.</p>
+                        <a class="font-extrabold text-[#333333] p-3 rounded-full border-2 border-[#333333] hover:bg-[#333333] hover:text-white transition-all duration-700"
+                            href="#">Read More</a>
                     </div>
                 </div>
             </div>
             <div class="card relative px-[9px]">
-                <div class="face face1 max-w-[300px] h-[200px] relative w-full rounded-xl flex items-center justify-center bg-[#333333]">
-                    <div class="content">
-                        <h3 class="text-center text-white text-3xl">Card 2</h3>
-                    </div>
+                <div
+                    class="face face1 max-w-[300px] h-[200px] relative w-full rounded-xl flex items-center justify-center bg-[#333333]">
+                    <h3 class="text-center text-white text-3xl">Card 2</h3>
                 </div>
-                <div class="face face2 max-w-[300px] h-[200px] relative rounded-xl bg-white flex items-center justify-center p-5 hover:rounded-t-none">
-                    <div class="content">
-                        <p class="text-black mx-auto max-w-[650px] pb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem beatae quam distinctio
-                            cupiditate, sed corrupti minima quis magni consequatur commodi.</p>
-                        <a class="font-extrabold text-[#33333] p-3 rounded-full border-2 border-[#333333] hover:bg-[#333333] hover:text-white transition-all duration-700" href="#">Read More</a>
+                <div
+                    class="face face2 max-w-[300px] h-[200px] relative rounded-xl bg-white flex items-center justify-center p-5 hover:rounded-t-none">
+                    <div class="text-center">
+                        <p class="text-black mx-auto max-w-[250px] pb-4">Lorem ipsum dolor sit amet consectetur
+                            adipisicing elit.</p>
+                        <a class="font-extrabold text-[#333333] p-3 rounded-full border-2 border-[#333333] hover:bg-[#333333] hover:text-white transition-all duration-700"
+                            href="#">Read More</a>
                     </div>
                 </div>
             </div>
-            <div class="card relativepx-[9px]">
-                <div class="face face1 max-w-[300px] h-[200px] relative w-full rounded-xl flex items-center justify-center bg-[#333333]">
-                    <div class="content">
-                        <h3 class="text-center text-white text-3xl">Card 3</h3>
-                    </div>
+            <div class="card relative px-[9px]">
+                <div
+                    class="face face1 max-w-[300px] h-[200px] relative w-full rounded-xl flex items-center justify-center bg-[#333333]">
+                    <h3 class="text-center text-white text-3xl">Card 3</h3>
                 </div>
-                <div class="face face2 max-w-[300px] h-[200px] relative rounded-xl bg-white flex items-center justify-center p-5 hover:rounded-t-none">
-                    <div class="content">
-                        <p class="text-black mx-auto max-w-[650px] pb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem beatae quam distinctio
-                            cupiditate, sed corrupti minima quis magni consequatur commodi.</p>
-                        <a class="font-extrabold text-[#33333] p-3 rounded-full border-2 border-[#333333] hover:bg-[#333333] hover:text-white transition-all duration-700" href="#">Read More</a>
+                <div
+                    class="face face2 max-w-[300px] h-[200px] relative rounded-xl bg-white flex items-center justify-center p-5 hover:rounded-t-none">
+                    <div class="text-center">
+                        <p class="text-black mx-auto max-w-[250px] pb-4">Lorem ipsum dolor sit amet consectetur
+                            adipisicing elit.</p>
+                        <a class="font-extrabold text-[#333333] p-3 rounded-full border-2 border-[#333333] hover:bg-[#333333] hover:text-white transition-all duration-700"
+                            href="#">Read More</a>
                     </div>
                 </div>
             </div>
