@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catch Me</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes curve-offset {
+            from {
+                stroke-dashoffset: 25.12;
+            }
+
+            46% {
+                stroke-dashoffset: 0;
+            }
+
+            92%,
+            to {
+                stroke-dashoffset: -24.97;
+            }
+        }
+
+        @keyframes dot-move {
+
+            from,
+            25% {
+                stroke-dashoffset: 0;
+            }
+
+            50%,
+            to {
+                stroke-dashoffset: -15.99;
+            }
+        }
+
+        @keyframes scene-move {
+            from {
+                transform: translate(0, 0);
+            }
+
+            to {
+                transform: translate(-16px, 0);
+            }
+        }
+
+        .pl__curve {
+            animation: curve-offset 1s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+        }
+
+        .pl__dot {
+            animation: dot-move 1s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+        }
+
+        .pl__scene {
+            animation: scene-move 1s linear infinite;
+        }
+    </style>
+</head>
+
+<body class="flex items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
+    <section>
+        <div class="flex justify-center">
+            <svg class="w-80 h-auto" viewBox="0 0 48 48" width="48px" height="48px" role="img"
+                aria-label="A dot attempts to catch up to one on the right by moving like a Slinky, but it keeps inching away">
+                <defs>
+                    <linearGradient id="pl-grad" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0%" stop-color="#000" />
+                        <stop offset="100%" stop-color="#fff" />
+                    </linearGradient>
+                    <mask id="pl-mask">
+                        <rect x="-1" y="-1" width="50" height="18" fill="url(#pl-grad)" />
+                    </mask>
+                </defs>
+                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"
+                    transform="translate(0,19)">
+                    <g class="pl__layer">
+                        <g class="pl__scene">
+                            <path class="pl__curve stroke-blue-500 dark:stroke-blue-300"
+                                d="M 16 9 C 16 4.582 19.582 1 24 1 C 28.418 1 32 4.582 32 9"
+                                stroke-dasharray="25.13 25.13" stroke-dashoffset="25.12" />
+                            <polyline class="pl__dot stroke-red-500 dark:stroke-red-300" points="32 9,48 9"
+                                stroke-dasharray="0.01 16" />
+                        </g>
+                    </g>
+                    <g class="pl__layer" mask="url(#pl-mask)">
+                        <g class="pl__scene">
+                            <path class="pl__curve stroke-teal-500 dark:stroke-teal-300"
+                                d="M 16 9 C 16 4.582 19.582 1 24 1 C 28.418 1 32 4.582 32 9"
+                                stroke-dasharray="25.13 25.13" stroke-dashoffset="25.12" />
+                            <polyline class="pl__dot stroke-purple-500 dark:stroke-purple-300" points="32 9,48 9"
+                                stroke-dasharray="0.01 16" />
+                        </g>
+                    </g>
+                </g>
+            </svg>
+        </div>
+    </section>
+</body>
+
+</html>
