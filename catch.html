@@ -46,15 +46,15 @@
             }
         }
 
-        .pl__curve {
+        .curve {
             animation: curve-offset 1s cubic-bezier(0.65, 0, 0.35, 1) infinite;
         }
 
-        .pl__dot {
+        .dot {
             animation: dot-move 1s cubic-bezier(0.65, 0, 0.35, 1) infinite;
         }
 
-        .pl__scene {
+        .full-content {
             animation: scene-move 1s linear infinite;
         }
     </style>
@@ -78,20 +78,20 @@
                 <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"
                     transform="translate(0,19)">
                     <g class="pl__layer">
-                        <g class="pl__scene">
-                            <path class="pl__curve stroke-blue-500 dark:stroke-blue-300"
+                        <g class="full-content">
+                            <path class="curve stroke-blue-500 dark:stroke-blue-300"
                                 d="M 16 9 C 16 4.582 19.582 1 24 1 C 28.418 1 32 4.582 32 9"
                                 stroke-dasharray="25.13 25.13" stroke-dashoffset="25.12" />
-                            <polyline class="pl__dot stroke-red-500 dark:stroke-red-300" points="32 9,48 9"
+                            <polyline class="dot stroke-red-500 dark:stroke-red-300" points="32 9,48 9"
                                 stroke-dasharray="0.01 16" />
                         </g>
                     </g>
                     <g class="pl__layer" mask="url(#pl-mask)">
-                        <g class="pl__scene">
-                            <path class="pl__curve stroke-teal-500 dark:stroke-teal-300"
+                        <g class="full-content">
+                            <path class="curve stroke-teal-500 dark:stroke-teal-300"
                                 d="M 16 9 C 16 4.582 19.582 1 24 1 C 28.418 1 32 4.582 32 9"
                                 stroke-dasharray="25.13 25.13" stroke-dashoffset="25.12" />
-                            <polyline class="pl__dot stroke-purple-500 dark:stroke-purple-300" points="32 9,48 9"
+                            <polyline class="dot stroke-purple-500 dark:stroke-purple-300" points="32 9,48 9"
                                 stroke-dasharray="0.01 16" />
                         </g>
                     </g>
