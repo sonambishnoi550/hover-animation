@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+        body {
+            font-family: Roboto;
+        }
+
+        .directions {
+            animation: expand 16s infinite;
+        }
+
+        @keyframes breathe {
+            0% {
+                top: -5px;
+                left: -5px;
+                transform: translate(0px, 0px);
+            }
+
+            25% {
+                top: -5px;
+                right: -5px;
+                transform: translate(200px, 0px);
+            }
+
+            50% {
+                bottom: -5px;
+                right: -5px;
+                transform: translate(200px, 200px);
+            }
+
+            75% {
+                bottom: -5px;
+                left: -5px;
+                transform: translate(0px, 200px);
+            }
+
+            100% {
+                top: -5px;
+                left: -5px;
+                transform: translate(0px, 0px);
+            }
+        }
+
+        @keyframes expand {
+            0% {
+                height: 125px;
+                width: 125px;
+            }
+
+            25% {
+                height: 175px;
+                width: 175px;
+            }
+
+            50% {
+                height: 175px;
+                width: 175px;
+            }
+
+            75% {
+                height: 125px;
+                width: 125px;
+            }
+
+            100% {
+                height: 125px;
+                width: 125px;
+            }
+        }
+
+        @keyframes words1 {
+            0% {
+                color: rgba(255, 255, 255, 1);
+            }
+
+            24% {
+                color: rgba(255, 255, 255, 1);
+            }
+
+            26% {
+                color: rgba(255, 255, 255, 0);
+            }
+
+            50% {
+                color: rgba(255, 255, 255, 0);
+            }
+
+            75% {
+                color: rgba(255, 255, 255, 0);
+            }
+
+            100% {
+                color: rgba(255, 255, 255, 0);
+            }
+        }
+
+        @keyframes words2 {
+            0% {
+                color: rgba(255, 255, 255, 0);
+            }
+
+            24% {
+                color: rgba(255, 255, 255, 0);
+            }
+
+            26% {
+                color: rgba(255, 255, 255, 1);
+            }
+
+            49% {
+                color: rgba(255, 255, 255, 1);
+            }
+
+            51% {
+                color: rgba(255, 255, 255, 0);
+            }
+
+            75% {
+                color: #ffffff00;
+            }
+
+            100% {
+                color: rgba(255, 255, 255, 0);
+            }
+        }
+
+        @keyframes words3 {
+            0% {
+                color: rgba(255, 255, 255, 0);
+            }
+
+            24% {
+                color: rgba(255, 255, 255, 0);
+            }
+
+            26% {
+                color: rgba(255, 255, 255, 0);
+            }
+
+            49% {
+                color: rgba(255, 255, 255, 0);
+            }
+
+            51% {
+                color: rgba(255, 255, 255, 1);
+            }
+
+            74% {
+                color: rgba(255, 255, 255, 1);
+            }
+
+            76% {
+                color: rgba(255, 255, 255, 0);
+            }
+
+            100% {
+                color: rgba(255, 255, 255, 0);
+            }
+        }
+
+        @keyframes words4 {
+            0% {
+                color: rgba(255, 255, 255, 0);
+            }
+
+            24% {
+                color: rgba(255, 255, 255, 0);
+            }
+
+            26% {
+                color: rgba(255, 255, 255, 0);
+            }
+
+            50% {
+                color: rgba(255, 255, 255, 0);
+            }
+
+            74% {
+                color: rgba(255, 255, 255, 0);
+            }
+
+            76% {
+                color: rgba(255, 255, 255, 1);
+            }
+
+            99% {
+                color: rgba(255, 255, 255, 1);
+            }
+
+            100% {
+                color: rgba(255, 255, 255, 0);
+            }
+        }
+    </style>
+</head>
+
+<body class="m-0 p-0 min-h-screen bg-black flex items-center justify-center">
+    <Section>
+    <h2 class="text-5xl text-white pb-20">Breathe</h2>
+    <div class="relative flex items-center justify-center self-center border border-white size-[200px]">
+        <div class="shadow-[0_0_10px_10px_#008080] animate-[breathe_16s_infinite] absolute size-[10px] bg-[#008080] rounded-[50%] -top-[5px] -left-[5px]"></div>
+        <div class="directions bg-[#008080] text-white size-[125px] text-center flex items-center justify-center text-2x">
+            <span class="span1 absolute animate-[words1_16s_infinite] text-white">Breathe In</span>
+            <span class="span2 absolute animate-[words2_16s_infinite] text-white">Hold</span>
+            <span class="span3 absolute animate-[words3_16s_infinite] text-white">Breath Out</span>
+            <span class="span4 absolute animate-[words4_16s_infinite] text-white">Hold</span>
+        </div>
+    </div>
+</Section>
+</body>
+
+</html>
