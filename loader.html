@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" href="assets/images/png/logo.png" type="image/x-icon">
-        <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Loader</title>
     <style>
         @property --deg {
@@ -13,6 +12,7 @@
             initial-value: 0deg;
             inherits: true;
         }
+
         .spinner {
             --size: 10rem;
             --color: #ffeb3b;
@@ -20,14 +20,8 @@
             --color-3: #03a9f4;
             width: var(--size);
             background: conic-gradient(from var(--deg),
-                    var(--color),
-                    var(--color-2),
-                    var(--color-3),
-                    transparent var(--p));
-            mask: radial-gradient(circle,
-                    transparent calc(var(--size) / 2 - var(--line-width, 1rem)),
-                    black calc(var(--size) / 2 - var(--line-width, 1rem)));
-            filter: drop-shadow(1rem 0 2rem var(--color-3));
+                    var(--color), var(--color-2), var(--color-3), transparent var(--p));
+            mask: radial-gradient(circle, transparent calc(var(--size) / 2 - 1rem), black calc(var(--size) / 2 - 1rem));
             border-radius: 50%;
             aspect-ratio: 1;
             animation: rotate 1.1s ease infinite;
@@ -59,11 +53,7 @@
 </head>
 
 <body class="flex items-center justify-center min-h-screen bg-black">
-    <section>
-        <div class='container'>
-            <div class="spinner"></div>
-        </div>
-    </section>
+    <div class="spinner"></div>
 </body>
 
 </html>
