@@ -30,7 +30,7 @@
             filter: drop-shadow(1rem 0 2rem var(--color-3));
             border-radius: 50%;
             aspect-ratio: 1;
-            animation: rotate 1.1s ease infinite, line-width 3.3s ease infinite;
+            animation: rotate 1.1s ease infinite;
         }
 
         @keyframes rotate {
@@ -53,20 +53,6 @@
             to {
                 --p: 20%;
                 --deg: -360deg;
-            }
-        }
-
-        @keyframes line-width {
-
-            from,
-            20%,
-            70%,
-            to {
-                --line-width: 1rem;
-            }
-
-            50% {
-                --line-width: .1rem;
             }
         }
     </style>
