@@ -33,8 +33,6 @@
   -30px 30px 0 #00efff,
   -30px 30px 20px #00efff;
   animation: animate 5s linear infinite;
-  animation-delay: calc(0.25s * var(--i));
-  transform-origin: 20px;
   transition: 2s;
 }
 .loader:hover span::before
@@ -48,7 +46,6 @@
   200px -200px 20px #00efff,
   -200px 200px 0 #00efff,
   -200px 200px 20px #00efff;
-  transform-origin: 250px;
 }
 @keyframes animate
 {
@@ -67,7 +64,7 @@
 </head>
 <body class="bg-[#001f25] flex items-center justify-center overflow-hidden">
     <section class="min-h-screen py-10">
-        <h2 class="text-center text-8xl pb-40 text-white">Circle </h2>
+        <h2 class="text-center md:text-8xl text-6xl pb-40 text-white">Circle </h2>
     <div class="loader relative md:size-[300px] size-[270px]">
         <span class="absolute top-0 left-0 w-full h-full" style="--i:1;"></span>
         <span class="absolute top-0 left-0 w-full h-full" style="--i:2;"></span>
